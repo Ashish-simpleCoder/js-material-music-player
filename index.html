@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/index.css">
     <script src="./src/index.js" type='module'></script>
     <title>The best material music player on the planet with material ui and async await</title>
 </head>
 <body>
     <audio id='audio_element'></audio>
-    <header><h2>Material music player</h2></header>
+    <!-- <header><h2>Material music player</h2></header> -->
     <main>
         <section id="player">
             <div id="song_list_displayer">
             </div>
             <div id="mini_player">
-                <a id="back_btn">back</a>
+                <a id="back_btn"><div class="line"></div></a>
                 <div id='part_1'>
                     <div class='img_container'><img src="" alt="" id='mini_song_img'></div>
                     <div class="mini_details">
@@ -36,7 +36,6 @@
                             </span>
                         </a>
                         <a id="play_btn">
-                            <span><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="pause-circle" class="svg-inline--fa fa-pause-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm96-280v160c0 8.8-7.2 16-16 16h-48c-8.8 0-16-7.2-16-16V176c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16zm-112 0v160c0 8.8-7.2 16-16 16h-48c-8.8 0-16-7.2-16-16V176c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16z"></path></svg></span>
                         </a>
                         <a id='next_btn'>
                             <span>

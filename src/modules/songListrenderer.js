@@ -7,7 +7,7 @@ export default function songListRenderer(music_arr){
 function template(song){
     let current_song_index = 0
     const div = document.createElement('div')
-    div.innerHTML =`<div><img src='${song.img}'></img></div>
+    div.innerHTML =`<div class='img_container'><img src='${song.img}'></img></div>
                     <div class='details'>
                         <h3>${song.name}</h3>
                         <p>${song.artist}</p>
