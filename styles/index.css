@@ -193,10 +193,9 @@ div.btns span svg {
 }
 
 .expand_mini_player {
-  height: 90vh !important;
+  height: 100vh !important;
   width: 100%;
   cursor: default;
-  padding: 0 2rem;
   flex-direction: column;
 }
 .expand_mini_player a#back_btn {
