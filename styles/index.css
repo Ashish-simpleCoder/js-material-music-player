@@ -26,11 +26,13 @@ a:active {
   transform: scale(0.8);
 }
 
-div#song_list_displayer {
-  max-height: 90vh;
-  overflow-y: scroll;
+#player {
+  height: 90vh;
+  margin-top: 3rem;
   position: relative;
+  overflow-y: scroll;
 }
+
 div#song_list_displayer div.each_list {
   display: flex;
   align-items: center;
@@ -104,7 +106,7 @@ div.btns span svg {
 
 .active_mini_player {
   height: 10vh !important;
-  position: relative;
+  position: absolute;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -193,7 +195,7 @@ div.btns span svg {
 }
 
 .expand_mini_player {
-  height: 95vh !important;
+  height: 100% !important;
   width: 100%;
   cursor: default;
   padding: 0 2rem;
@@ -310,6 +312,7 @@ div.btns span svg {
   transition: transform 0.2s ease;
   cursor: pointer;
   display: flex;
+  transform: scale(1.5);
 }
 .expand_mini_player div.btns a#prev_btn span,
 .expand_mini_player div.btns a#next_btn span {
@@ -328,7 +331,7 @@ div.btns span svg {
   transform: scale(0.8);
 }
 .expand_mini_player div.btns a#prev_btn {
-  transform: rotate(180deg);
+  transform: rotate(180deg) scale(1.5);
 }
 .expand_mini_player div.btns a#prev_btn:active {
   transform: rotate(180deg) scale(0.8);
