@@ -92,36 +92,6 @@ div#mini_player {
   background: #0b1314;
 }
 
-a#back_btn {
-  width: 8rem;
-  height: 3rem;
-  position: relative;
-  margin: 1rem 0 0 2rem;
-  cursor: pointer;
-}
-a#back_btn div.line {
-  width: 3rem;
-  height: 0.25rem;
-  background: #f0f0f0;
-  top: 50%;
-  position: absolute;
-  transform: translateY(-50%);
-}
-a#back_btn:before, a#back_btn:after {
-  position: absolute;
-  content: "";
-  width: 1.2rem;
-  height: 0.25rem;
-  background: #f0f0f0;
-  left: -8%;
-  top: 50%;
-  transform: rotate(-45deg) translate(50%, -50%);
-}
-a#back_btn:before {
-  bottom: 50%;
-  transform: rotate(45deg) translate(50%, -50%);
-}
-
 div.btns span {
   display: flex;
   height: 3rem;
@@ -228,6 +198,36 @@ div.btns span svg {
   cursor: default;
   padding: 0 2rem;
   flex-direction: column;
+}
+.expand_mini_player a#back_btn {
+  width: 8rem;
+  height: 3rem;
+  position: relative;
+  margin: 1rem 0 0 2rem;
+  cursor: pointer;
+  display: block;
+}
+.expand_mini_player a#back_btn div.line {
+  width: 3rem;
+  height: 0.25rem;
+  background: #f0f0f0;
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+}
+.expand_mini_player a#back_btn:before, .expand_mini_player a#back_btn:after {
+  position: absolute;
+  content: "";
+  width: 1.2rem;
+  height: 0.25rem;
+  background: #f0f0f0;
+  left: -8%;
+  top: 50%;
+  transform: rotate(-45deg) translate(50%, -50%);
+}
+.expand_mini_player a#back_btn:before {
+  bottom: 50%;
+  transform: rotate(45deg) translate(50%, -50%);
 }
 .expand_mini_player div#part_1 {
   height: 100%;
