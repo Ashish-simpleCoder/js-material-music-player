@@ -33,6 +33,10 @@ a:active {
   overflow-y: scroll;
 }
 
+div#song_list_displayer {
+  overflow-y: scroll;
+  height: 90vh;
+}
 div#song_list_displayer div.each_list {
   display: flex;
   align-items: center;
@@ -197,6 +201,7 @@ div.btns span svg {
 .expand_mini_player {
   height: 100% !important;
   width: 100%;
+  bottom: 0;
   cursor: default;
   padding: 0 2rem;
   flex-direction: column;
