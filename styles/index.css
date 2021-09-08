@@ -27,7 +27,7 @@ a:active {
 }
 
 #player {
-  height: 90vh;
+  height: 80vh;
   margin-top: 3rem;
   position: relative;
   overflow-y: scroll;
@@ -35,7 +35,7 @@ a:active {
 
 div#song_list_displayer {
   overflow-y: scroll;
-  height: 90vh;
+  height: 80vh;
 }
 div#song_list_displayer div.each_list {
   display: flex;
