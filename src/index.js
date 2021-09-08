@@ -85,10 +85,10 @@ progress_bar_container.addEventListener('click',(e)=>{
 })
 
 
-addEventListener('load',async()=>{
-    let index = JSON.parse(localStorage.getItem('index'))
-    if(index){
-        const handleMiniPlayerAndSongPlay = await import('./modules/handleMiniPlayerAndSongPlay.js')
-        handleMiniPlayerAndSongPlay.default(music_arr[index-1],index,'','from_local')
-    }
-})
+// addEventListener('load',async()=>{
+//     let index = JSON.parse(localStorage.getItem('index'))
+//     if(index){
+//         const handleMiniPlayerAndSongPlay = await import('./modules/handleMiniPlayerAndSongPlay.js')
+//         handleMiniPlayerAndSongPlay.default(music_arr[index-1],index,'','from_local')
+//     }
+// })
