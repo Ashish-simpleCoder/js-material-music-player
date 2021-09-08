@@ -193,7 +193,7 @@ div.btns span svg {
 }
 
 .expand_mini_player {
-  height: 90vh !important;
+  height: 95vh !important;
   width: 100%;
   cursor: default;
   padding: 0 2rem;
@@ -299,7 +299,6 @@ div.btns span svg {
 .expand_mini_player div.timers p#current_time,
 .expand_mini_player div.timers p#total_time {
   display: block;
-  font-size: clamp(1.2rem,1.4rem,1.4vw);
 }
 .expand_mini_player div.btns {
   height: 30%;
