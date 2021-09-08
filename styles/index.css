@@ -193,7 +193,7 @@ div.btns span svg {
 }
 
 .expand_mini_player {
-  height: 100vh !important;
+  height: 95vh !important;
   width: 100%;
   cursor: default;
   padding: 0 2rem;
