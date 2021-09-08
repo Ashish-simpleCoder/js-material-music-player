@@ -181,6 +181,7 @@ div.btns span svg {
   display: none;
 }
 .active_mini_player div.btns a#play_btn {
+  transform: scale(1.5);
   transition: transform 0.2s ease;
   cursor: pointer;
 }
