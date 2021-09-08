@@ -254,6 +254,7 @@ div.btns span svg {
 }
 .expand_mini_player div#part_1 div.mini_details h3 {
   margin-bottom: 0.5rem;
+  font-size: 2rem !important;
 }
 .expand_mini_player div#part_1 div.mini_details p {
   display: block !important;
