@@ -26,7 +26,7 @@ play_btn.addEventListener('click',function(e){
 back_btn.addEventListener('click',(e)=>{
     e.stopPropagation()
     let index = JSON.parse(localStorage.getItem('index'))
-    mini_song_img.src = music_arr[index-1].img
+    mini_song_img.src = music_arr[index].img
     mini_player.classList.remove('expand_mini_player')
 })
 
@@ -87,7 +87,7 @@ progress_bar_container.addEventListener('click',(e)=>{
 
 addEventListener('load',async()=>{
     let index = JSON.parse(localStorage.getItem('index'))
-    if(index){
+    if(index == 0 || index){
         const handleMiniPlayerAndSongPlay = await import('./modules/handleMiniPlayerAndSongPlay.js')
         handleMiniPlayerAndSongPlay.default(music_arr[index],index,'','from_local')
     }
