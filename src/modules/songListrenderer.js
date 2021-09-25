@@ -29,11 +29,8 @@ function template(song){
 
         const setSongDetailsLocalStorage = await import('./setSongDetailsLocalStorage.js')
         setSongDetailsLocalStorage.default()
-        const handleMiniPlayer = await import('./handleMiniPlayerAndSongPlay.js')
         current_song_index = JSON.parse(localStorage.getItem('index')) || 0
-        // if(current_song_index == song.id){
-        //     return
-        // }
+        const handleMiniPlayer = await import('./handleMiniPlayerAndSongPlay.js')
         current_song_index = handleMiniPlayer.default(song,current_song_index)
         localStorage.setItem('index',JSON.stringify(current_song_index))
 
