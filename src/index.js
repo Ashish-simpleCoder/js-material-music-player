@@ -65,12 +65,14 @@ next_btn.addEventListener('click',async(e)=>{
     e.stopPropagation()
     const setSongDetailsLocalStorage = await import('./modules/setSongDetailsLocalStorage.js')
     setSongDetailsLocalStorage.default()
+    audio_element.currentTime = 0;
     const playNextMusic = await import('./modules/playNextMusic.js')
     playNextMusic.default(music_arr)
 })
 
 prev_btn.addEventListener('click',async(e)=>{
     e.stopPropagation()
+    audio_element.currentTime = 0;
     const setSongDetailsLocalStorage = await import('./modules/setSongDetailsLocalStorage.js')
     setSongDetailsLocalStorage.default()
     const playPrevMusic = await import('./modules/playPrevMusic.js')

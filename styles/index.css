@@ -36,6 +36,16 @@ a:active {
 div#song_list_displayer {
   overflow-y: scroll;
   height: 85vh;
+  animation: animate_player 1s ease;
+}
+@keyframes animate_player {
+  from {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 div#song_list_displayer div.each_list {
   display: flex;
