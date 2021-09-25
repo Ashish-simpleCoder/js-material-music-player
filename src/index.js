@@ -87,13 +87,13 @@ progress_bar_container.addEventListener('click',(e)=>{
 })
 
 
-addEventListener('load',async()=>{
-    let index = JSON.parse(localStorage.getItem('index'))
-    if(index == 0 || index){
-        const handleMiniPlayerAndSongPlay = await import('./modules/handleMiniPlayerAndSongPlay.js')
-        handleMiniPlayerAndSongPlay.default(music_arr[index],index,'','from_local')
-    }
-})
+// addEventListener('load',async()=>{
+//     let index = JSON.parse(localStorage.getItem('index'))
+//     if(index == 0 || index){
+//         const handleMiniPlayerAndSongPlay = await import('./modules/handleMiniPlayerAndSongPlay.js')
+//         handleMiniPlayerAndSongPlay.default(music_arr[index],index,'','from_local')
+//     }
+// })
 
 audio_element.addEventListener('loadstart',()=>{
     mini_song_img.classList.add('hide_song_img')
