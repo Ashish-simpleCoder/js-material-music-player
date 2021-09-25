@@ -27,7 +27,8 @@ a:active {
 
 #player {
   height: 85vh;
-  margin-top: 3rem;
+  max-width: 50rem;
+  margin: 3rem auto 3rem auto;
   position: relative;
   overflow-y: scroll;
   background: #fffcfa;
