@@ -1,13 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap");
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   text-decoration: none;
   border: none;
-  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  letter-spacing: 0.5px;
-  color: #f0f0f0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  letter-spacing: 0.05rem;
+  color: #1a0c00;
 }
 
 html {
@@ -15,7 +14,7 @@ html {
 }
 
 body {
-  background: #060a0a;
+  background: #fffefc;
 }
 
 a {
@@ -27,7 +26,7 @@ a:active {
 }
 
 #player {
-  height: 90vh;
+  height: 85vh;
   margin-top: 3rem;
   position: relative;
   overflow-y: scroll;
@@ -35,20 +34,20 @@ a:active {
 
 div#song_list_displayer {
   overflow-y: scroll;
-  height: 90vh;
+  height: 85vh;
 }
 div#song_list_displayer div.each_list {
   display: flex;
   align-items: center;
   padding: 1rem;
-  border-bottom: 1px solid #2e2d2d;
+  border-bottom: 0.1rem solid #ffb066;
   transition: background 100ms ease;
   position: relative;
   overflow: hidden;
 }
 div#song_list_displayer div.each_list:hover {
   cursor: pointer;
-  background: #141313;
+  background: #ffb066;
 }
 div#song_list_displayer div.each_list div.img_container {
   margin: 0 2rem 0 0;
@@ -58,13 +57,14 @@ div#song_list_displayer div.each_list div.img_container img {
   transform: scale(0.9);
 }
 div#song_list_displayer div.each_list div.details h3 {
-  font-size: clamp(1.5rem,1.7rem,1.7vw);
+  font-size: clamp(1.6rem,1.9rem,1.9vw);
   font-weight: 400;
+  color: black;
 }
 div#song_list_displayer div.each_list div.details p {
   font-weight: 400;
-  font-size: clamp(1.2rem,1.4rem,1.4vw);
-  color: #559097;
+  font-size: clamp(1.3rem,1.4rem,1.4vw);
+  color: #663100;
 }
 
 span.span_ripple {
@@ -72,7 +72,7 @@ span.span_ripple {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  background: rgba(66, 0, 128, 0.6);
+  background: rgba(153, 74, 0, 0.6);
   transform: translate(-50%, -50%);
   animation: animate_ripple 0.5s linear infinite;
   pointer-events: none;
@@ -95,7 +95,7 @@ div#mini_player {
   transition: all 0.5s ease-in-out;
   bottom: 0;
   height: 0;
-  background: #0b1314;
+  background: #ffb066;
 }
 
 div.btns span {
@@ -181,7 +181,6 @@ div.btns span svg {
   display: none;
 }
 .active_mini_player div.btns a#play_btn {
-  transform: scale(1.5);
   transition: transform 0.2s ease;
   cursor: pointer;
 }
@@ -192,7 +191,7 @@ div.btns span svg {
   display: flex;
   width: 3rem;
   height: 3rem;
-  color: var(--clr);
+  color: white !important;
 }
 .active_mini_player div.btns a#play_btn span svg {
   width: 100%;
@@ -206,6 +205,7 @@ div.btns span svg {
   cursor: default;
   padding: 0 2rem;
   flex-direction: column;
+  background: #ffe5cc !important;
 }
 .expand_mini_player a#back_btn {
   width: 8rem;
@@ -218,7 +218,7 @@ div.btns span svg {
 .expand_mini_player a#back_btn div.line {
   width: 3rem;
   height: 0.25rem;
-  background: #f0f0f0;
+  background: #1a0c00;
   top: 50%;
   position: absolute;
   transform: translateY(-50%);
@@ -228,7 +228,7 @@ div.btns span svg {
   content: "";
   width: 1.2rem;
   height: 0.25rem;
-  background: #f0f0f0;
+  background: #1a0c00;
   left: -8%;
   top: 50%;
   transform: rotate(-45deg) translate(50%, -50%);
@@ -266,9 +266,9 @@ div.btns span svg {
 }
 .expand_mini_player div#part_1 div.mini_details p {
   display: block !important;
-  font-size: clamp(1.2rem,1.4rem,1.4vw) !important;
+  font-size: clamp(1.3rem,1.4rem,1.4vw) !important;
   font-weight: 400;
-  color: #559097 !important;
+  color: #663100 !important;
 }
 .expand_mini_player div#part_1 div.timers {
   display: flex;
@@ -318,7 +318,7 @@ div.btns span svg {
   transition: transform 0.2s ease;
   cursor: pointer;
   display: flex;
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
 .expand_mini_player div.btns a#prev_btn span,
 .expand_mini_player div.btns a#next_btn span {
@@ -337,7 +337,7 @@ div.btns span svg {
   transform: scale(0.8);
 }
 .expand_mini_player div.btns a#prev_btn {
-  transform: rotate(180deg) scale(1.5);
+  transform: rotate(180deg) scale(1.2);
 }
 .expand_mini_player div.btns a#prev_btn:active {
   transform: rotate(180deg) scale(0.8);

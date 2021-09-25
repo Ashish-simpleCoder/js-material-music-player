@@ -89,6 +89,6 @@ addEventListener('load',async()=>{
     let index = JSON.parse(localStorage.getItem('index'))
     if(index){
         const handleMiniPlayerAndSongPlay = await import('./modules/handleMiniPlayerAndSongPlay.js')
-        handleMiniPlayerAndSongPlay.default(music_arr[index-1],index,'','from_local')
+        handleMiniPlayerAndSongPlay.default(music_arr[index],index,'','from_local')
     }
 })
