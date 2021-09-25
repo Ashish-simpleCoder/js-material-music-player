@@ -92,3 +92,12 @@ addEventListener('load',async()=>{
         handleMiniPlayerAndSongPlay.default(music_arr[index],index,'','from_local')
     }
 })
+
+audio_element.addEventListener('loadstart',()=>{
+    mini_song_img.classList.add('hide_song_img')
+    img_container_loader.classList.remove('hide_song_loader')
+})
+audio_element.addEventListener('canplay',()=>{
+    mini_song_img.classList.remove('hide_song_img')
+    img_container_loader.classList.add('hide_song_loader')
+})

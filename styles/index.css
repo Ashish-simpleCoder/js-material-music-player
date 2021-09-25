@@ -14,7 +14,7 @@ html {
 }
 
 body {
-  background: #fffefc;
+  background: #fffcfa;
 }
 
 a {
@@ -30,6 +30,7 @@ a:active {
   margin-top: 3rem;
   position: relative;
   overflow-y: scroll;
+  background: #fffcfa;
 }
 
 div#song_list_displayer {
@@ -121,6 +122,7 @@ div.btns span svg {
 }
 .active_mini_player div.img_container {
   transition: all 0.5s ease-in-out;
+  position: relative;
 }
 .active_mini_player div.img_container img {
   transition: all 0.5s ease-in-out;
@@ -136,6 +138,7 @@ div.btns span svg {
 .active_mini_player div#part_1 p#mini_song_artist,
 .active_mini_player div#part_1 p#current_time,
 .active_mini_player div#part_1 p#total_time {
+  font-weight: 600;
   color: var(--clr);
 }
 .active_mini_player div#part_1 div.mini_details {
@@ -147,9 +150,10 @@ div.btns span svg {
 }
 .active_mini_player div#part_1 div.mini_details h3#mini_song_title {
   font-size: clamp(1.6rem,1.8rem,1.8vw);
-  font-weight: 400;
+  font-weight: 600;
 }
 .active_mini_player div#part_1 div.mini_details p#mini_song_artist {
+  font-weight: 600;
   display: none;
 }
 .active_mini_player div.timers p#current_time,
@@ -274,6 +278,10 @@ div.btns span svg {
   display: flex;
   justify-content: space-between;
 }
+.expand_mini_player div#part_1 div.timers p {
+  letter-spacing: 0;
+  font-size: clamp(1.4rem,1.5rem,1.5vw);
+}
 .expand_mini_player div#part_1 div#progress_bar_container {
   position: unset;
   height: 0.3rem;
@@ -341,4 +349,30 @@ div.btns span svg {
 }
 .expand_mini_player div.btns a#prev_btn:active {
   transform: rotate(180deg) scale(0.8);
+}
+
+div#img_container_loader {
+  height: 100%;
+  width: 100%;
+  animation: animate_loader 1s linear infinite alternate-reverse;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0;
+  z-index: 2;
+}
+@keyframes animate_loader {
+  0% {
+    background: gray;
+  }
+  50% {
+    background: white;
+  }
+  100% {
+    background: gray;
+  }
+}
+
+.hide_song_loader {
+  display: none;
 }
