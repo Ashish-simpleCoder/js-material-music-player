@@ -26,7 +26,7 @@ play_btn.addEventListener('click',function(e){
 back_btn.addEventListener('click',(e)=>{
     e.stopPropagation()
     let index = JSON.parse(localStorage.getItem('index'))
-    mini_song_img.src = music_arr[index-1].img
+    mini_song_img.src = music_arr[index].img
     mini_player.classList.remove('expand_mini_player')
 })
 
@@ -65,12 +65,14 @@ next_btn.addEventListener('click',async(e)=>{
     e.stopPropagation()
     const setSongDetailsLocalStorage = await import('./modules/setSongDetailsLocalStorage.js')
     setSongDetailsLocalStorage.default()
+    audio_element.currentTime = 0;
     const playNextMusic = await import('./modules/playNextMusic.js')
     playNextMusic.default(music_arr)
 })
 
 prev_btn.addEventListener('click',async(e)=>{
     e.stopPropagation()
+    audio_element.currentTime = 0;
     const setSongDetailsLocalStorage = await import('./modules/setSongDetailsLocalStorage.js')
     setSongDetailsLocalStorage.default()
     const playPrevMusic = await import('./modules/playPrevMusic.js')
@@ -87,8 +89,17 @@ progress_bar_container.addEventListener('click',(e)=>{
 
 addEventListener('load',async()=>{
     let index = JSON.parse(localStorage.getItem('index'))
-    if(index){
+    if(index == 0 || index){
         const handleMiniPlayerAndSongPlay = await import('./modules/handleMiniPlayerAndSongPlay.js')
         handleMiniPlayerAndSongPlay.default(music_arr[index],index,'','from_local')
     }
+})
+
+audio_element.addEventListener('loadstart',()=>{
+    mini_song_img.classList.add('hide_song_img')
+    img_container_loader.classList.remove('hide_song_loader')
+})
+audio_element.addEventListener('canplay',()=>{
+    mini_song_img.classList.remove('hide_song_img')
+    img_container_loader.classList.add('hide_song_loader')
 })
