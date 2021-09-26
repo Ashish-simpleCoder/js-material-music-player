@@ -1,3 +1,44 @@
+:root {
+  --prm_0:black;
+  --prm_50:hsl(29,100%,5%);
+  --prm_100:hsl(29, 100%, 10%);
+  --prm_200:hsl(29, 100%, 20%);
+  --prm_300:hsl(29, 100%, 30%);
+  --prm_400:hsl(29, 100%, 40%);
+  --prm_500:hsl(29, 100%, 50%);
+  --prm_600:hsl(29, 100%, 60%);
+  --prm_700:hsl(29, 100%, 70%);
+  --prm_800:hsl(29, 100%, 80%);
+  --prm_900:hsl(29, 100%, 90%);
+  --prm_990:hsl(29, 100%, 99%);
+  --span_ripple_bg:hsla(29, 100%, 30%, 0.6);
+  --body-bg:var(--prm_990);
+  --mini_bg:var(--prm_700);
+  --player-bg:var(--prm_990);
+  --clr:var(--prm_50);
+  --list_hover_clr:var(--prm_700);
+  --clr_second:var(--prm_200);
+  --border:var(--prm_700);
+  --active_mini_player_bg:var(--prm_900);
+}
+
+.dark_mode {
+  --span_ripple_bg:hsla(29, 100%, 30%, 0.6);
+  --body-bg:var(--prm_200);
+  --mini_bg:var(--prm_200);
+  --player-bg:var(--prm_50);
+  --clr:var(--prm_990);
+  --clr_second:var(--prm_900);
+  --list_hover_clr:var(--prm_200);
+  --border:var(--prm_200);
+  --active_mini_player_bg:var(--prm_200);
+  --song_title_clr:var(--prm_990);
+  background: var(--prm_50);
+}
+.dark_mode #player {
+  background: var(--prm_100);
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -14,15 +55,24 @@ html {
 }
 
 body {
-  background: #fffcfa;
+  background: var(--body-bg);
 }
 
-a {
+a, button {
   transition: transform 0.3s ease;
 }
 
-a:active {
-  transform: scale(0.8);
+a:active, button:active {
+  transform: scale(0.8) translateY(0.3rem);
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  font-size: clamp(2rem,2rem,2vw);
+  background: gray;
+  border-radius: 50%;
+  padding: 0.5rem;
 }
 
 #player {
@@ -31,7 +81,8 @@ a:active {
   margin: 3rem auto 3rem auto;
   position: relative;
   overflow-y: scroll;
-  background: #fffcfa;
+  background: var(--prm_990);
+  border-top: 1px solid var(--border);
 }
 
 div#song_list_displayer {
@@ -52,31 +103,30 @@ div#song_list_displayer div.each_list {
   display: flex;
   align-items: center;
   padding: 1rem;
-  border-bottom: 0.1rem solid #ffb066;
+  border-bottom: 0.1rem solid var(--border);
   transition: background 100ms ease;
   position: relative;
   overflow: hidden;
 }
 div#song_list_displayer div.each_list:hover {
   cursor: pointer;
-  background: #ffb066;
+  background: var(--list_hover_clr);
 }
 div#song_list_displayer div.each_list div.img_container {
   margin: 0 2rem 0 0;
   display: flex;
-}
-div#song_list_displayer div.each_list div.img_container img {
-  transform: scale(0.9);
+  border-radius: 50%;
+  overflow: hidden;
 }
 div#song_list_displayer div.each_list div.details h3 {
-  font-size: clamp(1.6rem,1.9rem,1.9vw);
-  font-weight: 400;
-  color: black;
+  font-size: clamp(1.5rem,1.6rem,1.6vw);
+  font-weight: 600;
+  color: var(--song_title_clr);
 }
 div#song_list_displayer div.each_list div.details p {
-  font-weight: 400;
-  font-size: clamp(1.3rem,1.4rem,1.4vw);
-  color: #663100;
+  font-weight: 600;
+  font-size: clamp(1.2rem,1.3rem,1.3vw);
+  color: var(--clr_second);
 }
 
 span.span_ripple {
@@ -84,7 +134,7 @@ span.span_ripple {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  background: rgba(153, 74, 0, 0.6);
+  background: var(--span_ripple_bg);
   transform: translate(-50%, -50%);
   animation: animate_ripple 0.5s linear infinite;
   pointer-events: none;
@@ -107,7 +157,7 @@ div#mini_player {
   transition: all 0.5s ease-in-out;
   bottom: 0;
   height: 0;
-  background: #ffb066;
+  background: var(--mini_bg);
 }
 
 div.btns span {
@@ -146,7 +196,6 @@ div.btns span svg {
   flex-direction: row;
 }
 .active_mini_player div#part_1 h3#mini_song_title,
-.active_mini_player div#part_1 p#mini_song_artist,
 .active_mini_player div#part_1 p#current_time,
 .active_mini_player div#part_1 p#total_time {
   font-weight: 600;
@@ -220,7 +269,7 @@ div.btns span svg {
   cursor: default;
   padding: 0 2rem;
   flex-direction: column;
-  background: #ffe5cc !important;
+  background: var(--active_mini_player_bg) !important;
 }
 .expand_mini_player a#back_btn {
   width: 8rem;
@@ -277,13 +326,13 @@ div.btns span svg {
 }
 .expand_mini_player div#part_1 div.mini_details h3 {
   margin-bottom: 0.5rem;
-  font-size: 2rem !important;
+  font-size: clamp(2.5rem,3rem,3vw) !important;
 }
 .expand_mini_player div#part_1 div.mini_details p {
   display: block !important;
-  font-size: clamp(1.3rem,1.4rem,1.4vw) !important;
-  font-weight: 400;
-  color: #663100 !important;
+  font-weight: 600 !important;
+  font-size: clamp(1.6rem,1.8rem,1.8vw);
+  color: var(--clr_second);
 }
 .expand_mini_player div#part_1 div.timers {
   display: flex;

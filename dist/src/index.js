@@ -87,13 +87,13 @@ progress_bar_container.addEventListener('click',(e)=>{
 })
 
 
-addEventListener('load',async()=>{
-    let index = JSON.parse(localStorage.getItem('index'))
-    if(index == 0 || index){
-        const handleMiniPlayerAndSongPlay = await import('./modules/handleMiniPlayerAndSongPlay.js')
-        handleMiniPlayerAndSongPlay.default(music_arr[index],index,'','from_local')
-    }
-})
+// addEventListener('load',async()=>{
+//     let index = JSON.parse(localStorage.getItem('index'))
+//     if(index == 0 || index){
+//         const handleMiniPlayerAndSongPlay = await import('./modules/handleMiniPlayerAndSongPlay.js')
+//         handleMiniPlayerAndSongPlay.default(music_arr[index],index,'','from_local')
+//     }
+// })
 
 audio_element.addEventListener('loadstart',()=>{
     mini_song_img.classList.add('hide_song_img')
@@ -102,4 +102,16 @@ audio_element.addEventListener('loadstart',()=>{
 audio_element.addEventListener('canplay',()=>{
     mini_song_img.classList.remove('hide_song_img')
     img_container_loader.classList.add('hide_song_loader')
+})
+
+
+
+dark_mode_btn.addEventListener('click',()=>{
+    document.body.classList.toggle('dark_mode')
+    if(dark_mode_btn.innerHTML == '🌚'){
+        dark_mode_btn.innerHTML = '🌞';
+    }else{
+        dark_mode_btn.innerHTML = '🌚';
+
+    }
 })
