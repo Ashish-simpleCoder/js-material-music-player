@@ -103,3 +103,15 @@ audio_element.addEventListener('canplay',()=>{
     mini_song_img.classList.remove('hide_song_img')
     img_container_loader.classList.add('hide_song_loader')
 })
+
+
+
+dark_mode_btn.addEventListener('click',()=>{
+    document.body.classList.toggle('dark_mode')
+    if(dark_mode_btn.innerHTML == '🌚'){
+        dark_mode_btn.innerHTML = '🌞';
+    }else{
+        dark_mode_btn.innerHTML = '🌚';
+
+    }
+})
