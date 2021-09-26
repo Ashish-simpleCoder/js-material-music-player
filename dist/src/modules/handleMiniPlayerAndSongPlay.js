@@ -28,6 +28,7 @@ export default function handleMiniPlayer(song,current_song_index,next,from_local
     mini_player.addEventListener('click',(e)=>{
         e.stopPropagation()
         mini_player.classList.add('expand_mini_player')
+        // player.style.overflow = 'hidden'
         mini_song_img.src = song.bigImg
     })
     return current_song_index
