@@ -31,7 +31,7 @@
   --clr_second:var(--prm_900);
   --list_hover_clr:var(--prm_200);
   --border:var(--prm_200);
-  --active_mini_player_bg:var(--prm_200);
+  --active_mini_player_bg:var(--prm_100);
   --song_title_clr:var(--prm_990);
   background: var(--prm_50);
 }
@@ -78,10 +78,12 @@ button {
 
 #player {
   height: 85vh;
+  max-height: 80rem;
   max-width: 50rem;
-  margin: 3rem auto 3rem auto;
+  margin: 1rem auto 3rem auto;
   position: relative;
   overflow-y: scroll;
+  overflow: hidden;
   background: var(--prm_990);
   border-top: 1px solid var(--border);
   transition: background 0.2s ease 0.1s;
@@ -263,6 +265,24 @@ div.btns span svg {
   height: 100%;
 }
 
+@keyframes animate_img {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes animate_img_back {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+  }
+}
 .expand_mini_player {
   height: 100% !important;
   width: 100%;
@@ -283,7 +303,7 @@ div.btns span svg {
 .expand_mini_player a#back_btn div.line {
   width: 3rem;
   height: 0.25rem;
-  background: #1a0c00;
+  background: var(--clr);
   top: 50%;
   position: absolute;
   transform: translateY(-50%);
@@ -293,7 +313,7 @@ div.btns span svg {
   content: "";
   width: 1.2rem;
   height: 0.25rem;
-  background: #1a0c00;
+  background: var(--clr);
   left: -8%;
   top: 50%;
   transform: rotate(-45deg) translate(50%, -50%);
@@ -312,7 +332,6 @@ div.btns span svg {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3rem 0;
   margin: 0 auto;
 }
 .expand_mini_player div#part_1 div.img_container img {
@@ -340,8 +359,7 @@ div.btns span svg {
   justify-content: space-between;
 }
 .expand_mini_player div#part_1 div.timers p {
-  letter-spacing: 0;
-  font-size: clamp(1.4rem,1.5rem,1.5vw);
+  font-size: clamp(1.5rem,1.5rem,1.5vw);
 }
 .expand_mini_player div#part_1 div#progress_bar_container {
   position: unset;

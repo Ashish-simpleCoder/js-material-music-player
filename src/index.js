@@ -68,6 +68,8 @@ next_btn.addEventListener('click',async(e)=>{
     audio_element.currentTime = 0;
     const playNextMusic = await import('./modules/playNextMusic.js')
     playNextMusic.default(music_arr)
+    mini_song_img.style.animation = 'animate_img 0.3s ease forwards'
+    setTimeout(()=> mini_song_img.style.animation = '',350)
 })
 
 prev_btn.addEventListener('click',async(e)=>{
@@ -77,6 +79,9 @@ prev_btn.addEventListener('click',async(e)=>{
     setSongDetailsLocalStorage.default()
     const playPrevMusic = await import('./modules/playPrevMusic.js')
     playPrevMusic.default(music_arr)
+    mini_song_img.style.animation = 'animate_img_back 0.3s ease forwards'
+    setTimeout(()=> mini_song_img.style.animation = '',350)
+
 })
 
 progress_bar_container.addEventListener('click',(e)=>{
