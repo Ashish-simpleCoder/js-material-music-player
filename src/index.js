@@ -71,7 +71,6 @@ next_btn.addEventListener('click',async(e)=>{
     mini_song_img.style.animation = 'animate_img 0.3s ease forwards'
     setTimeout(()=> mini_song_img.style.animation = '',350)
 })
-
 prev_btn.addEventListener('click',async(e)=>{
     e.stopPropagation()
     audio_element.currentTime = 0;

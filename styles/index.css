@@ -11,8 +11,8 @@
   --prm_800:hsl(29, 100%, 80%);
   --prm_900:hsl(29, 100%, 90%);
   --prm_990:hsl(29, 100%, 99%);
+  --body-bg:rgb(0, 22, 29);
   --span_ripple_bg:hsla(29, 100%, 30%, 0.6);
-  --body-bg:var(--prm_990);
   --mini_bg:var(--prm_700);
   --player-bg:var(--prm_990);
   --clr:var(--prm_50);
@@ -39,15 +39,25 @@
   background: var(--prm_100);
 }
 
+body {
+  background: #00161d;
+}
+
+main, section#player {
+  border-radius: 0.5rem;
+  background: linear-gradient(rgba(10, 36, 14, 0.5), #01282c);
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   text-decoration: none;
   border: none;
+  letter-spacing: 0.07rem;
+  color: #e6e6e6;
+  font-weight: 500;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  letter-spacing: 0.05rem;
-  color: var(--clr);
 }
 
 html {
@@ -107,14 +117,13 @@ div#song_list_displayer div.each_list {
   display: flex;
   align-items: center;
   padding: 1rem;
-  border-bottom: 0.1rem solid var(--border);
+  border-bottom: 0.1rem solid #090c09;
   transition: background 100ms ease;
   position: relative;
   overflow: hidden;
 }
 div#song_list_displayer div.each_list:hover {
   cursor: pointer;
-  background: var(--list_hover_clr);
 }
 div#song_list_displayer div.each_list div.img_container {
   margin: 0 2rem 0 0;
@@ -123,14 +132,13 @@ div#song_list_displayer div.each_list div.img_container {
   overflow: hidden;
 }
 div#song_list_displayer div.each_list div.details h3 {
-  font-size: clamp(1.5rem,1.6rem,1.6vw);
+  font-size: clamp(1.6rem,1.7rem,1.7vw);
   font-weight: 600;
-  color: var(--song_title_clr);
+  color: #e6e6e6;
 }
 div#song_list_displayer div.each_list div.details p {
-  font-weight: 600;
-  font-size: clamp(1.2rem,1.3rem,1.3vw);
-  color: var(--clr_second);
+  font-size: clamp(1.4rem,1.5rem,1.5vw);
+  color: #c8c8c8;
 }
 
 span.span_ripple {
@@ -155,13 +163,12 @@ span.span_ripple {
 }
 
 div#mini_player {
-  height: 0;
   overflow: hidden;
   position: absolute;
   transition: all 0.5s ease-in-out;
   bottom: 0;
   height: 0;
-  background: var(--mini_bg);
+  background: linear-gradient(#0a240e, #01282c);
 }
 
 div.btns span {
@@ -203,7 +210,6 @@ div.btns span svg {
 .active_mini_player div#part_1 p#current_time,
 .active_mini_player div#part_1 p#total_time {
   font-weight: 600;
-  color: var(--clr);
 }
 .active_mini_player div#part_1 div.mini_details {
   width: 100%;
@@ -290,7 +296,6 @@ div.btns span svg {
   cursor: default;
   padding: 0 2rem;
   flex-direction: column;
-  background: var(--active_mini_player_bg) !important;
 }
 .expand_mini_player a#back_btn {
   width: 8rem;
