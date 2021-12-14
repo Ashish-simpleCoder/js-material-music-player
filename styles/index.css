@@ -124,6 +124,8 @@ div#song_list_displayer div.each_list div.img_container {
   display: flex;
   border-radius: 50%;
   overflow: hidden;
+  width: 5rem;
+  height: 5rem;
 }
 div#song_list_displayer div.each_list div.details h3 {
   font-size: clamp(1.5rem,1.6rem,1.6vw);
@@ -131,7 +133,7 @@ div#song_list_displayer div.each_list div.details h3 {
   color: #e6e6e6;
 }
 div#song_list_displayer div.each_list div.details p {
-  font-size: clamp(1.3rem,1.4rem,1.4vw);
+  font-size: clamp(1.3rem,1.3rem,1.3vw);
   color: #c8c8c8;
 }
 
@@ -214,10 +216,8 @@ div.btns span svg {
 }
 .active_mini_player div#part_1 div.mini_details h3#mini_song_title {
   font-size: clamp(1.6rem,1.8rem,1.8vw);
-  font-weight: 600;
 }
 .active_mini_player div#part_1 div.mini_details p#mini_song_artist {
-  font-weight: 600;
   display: none;
 }
 .active_mini_player div.timers p#current_time,
@@ -294,14 +294,14 @@ div.btns span svg {
   width: 8rem;
   height: 3rem;
   position: relative;
-  margin: 1rem 0 0 2rem;
+  margin: 1rem 0 0 1rem;
   cursor: pointer;
   display: block;
 }
 .expand_mini_player a#back_btn div.line {
   width: 3rem;
   height: 0.25rem;
-  background: var(--clr);
+  background: #f0f0f0;
   top: 50%;
   position: absolute;
   transform: translateY(-50%);
@@ -311,7 +311,7 @@ div.btns span svg {
   content: "";
   width: 1.2rem;
   height: 0.25rem;
-  background: var(--clr);
+  background: #f0f0f0;
   left: -8%;
   top: 50%;
   transform: rotate(-45deg) translate(50%, -50%);
@@ -349,17 +349,19 @@ div.btns span svg {
 .expand_mini_player div#part_1 div.mini_details p {
   display: block !important;
   font-size: clamp(1.4rem,1.5rem,1.5vw);
+  color: #c8c8c8;
 }
 .expand_mini_player div#part_1 div.timers {
   display: flex;
   justify-content: space-between;
 }
 .expand_mini_player div#part_1 div.timers p {
-  font-size: clamp(1.5rem,1.5rem,1.5vw);
+  font-size: clamp(1.3rem,1.3rem,1.3vw);
+  letter-spacing: 0;
 }
 .expand_mini_player div#part_1 div#progress_bar_container {
   position: unset;
-  height: 0.3rem;
+  height: 0.4rem;
 }
 .expand_mini_player a#back_btn {
   display: block;
