@@ -43,11 +43,6 @@ body {
   background: #00161d;
 }
 
-main, section#player {
-  border-radius: 0.5rem;
-  background: linear-gradient(rgba(10, 36, 14, 0.5), #01282c);
-}
-
 * {
   padding: 0;
   margin: 0;
@@ -66,11 +61,10 @@ html {
 
 body {
   background: var(--body-bg);
-  transition: background 0.2s ease;
 }
 
 a, button {
-  transition: transform 0.3s ease;
+  transition: transform 0.3s;
 }
 
 a:active, button:active {
@@ -90,13 +84,13 @@ button {
   height: 85vh;
   max-height: 80rem;
   max-width: 50rem;
+  width: 90%;
   margin: 1rem auto 3rem auto;
   position: relative;
   overflow-y: scroll;
   overflow: hidden;
-  background: var(--prm_990);
-  border-top: 1px solid var(--border);
-  transition: background 0.2s ease 0.1s;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.5);
+  background: linear-gradient(140deg, rgba(10, 36, 14, 0.5), #01282c);
 }
 
 div#song_list_displayer {
@@ -132,12 +126,12 @@ div#song_list_displayer div.each_list div.img_container {
   overflow: hidden;
 }
 div#song_list_displayer div.each_list div.details h3 {
-  font-size: clamp(1.6rem,1.7rem,1.7vw);
+  font-size: clamp(1.5rem,1.6rem,1.6vw);
   font-weight: 600;
   color: #e6e6e6;
 }
 div#song_list_displayer div.each_list div.details p {
-  font-size: clamp(1.4rem,1.5rem,1.5vw);
+  font-size: clamp(1.3rem,1.4rem,1.4vw);
   color: #c8c8c8;
 }
 
@@ -237,8 +231,7 @@ div.btns span svg {
   align-items: center;
   height: 0.1rem;
   width: 100%;
-  background: #8416eb;
-  background: green;
+  background: #016b01;
 }
 .active_mini_player div#progress_bar_container div#progressive_bar {
   background: red;
@@ -355,9 +348,7 @@ div.btns span svg {
 }
 .expand_mini_player div#part_1 div.mini_details p {
   display: block !important;
-  font-weight: 600 !important;
-  font-size: clamp(1.6rem,1.8rem,1.8vw);
-  color: var(--clr_second);
+  font-size: clamp(1.4rem,1.5rem,1.5vw);
 }
 .expand_mini_player div#part_1 div.timers {
   display: flex;
