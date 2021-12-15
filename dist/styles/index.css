@@ -11,8 +11,8 @@
   --prm_800:hsl(29, 100%, 80%);
   --prm_900:hsl(29, 100%, 90%);
   --prm_990:hsl(29, 100%, 99%);
+  --body-bg:rgb(0, 22, 29);
   --span_ripple_bg:hsla(29, 100%, 30%, 0.6);
-  --body-bg:var(--prm_990);
   --mini_bg:var(--prm_700);
   --player-bg:var(--prm_990);
   --clr:var(--prm_50);
@@ -39,28 +39,44 @@
   background: var(--prm_100);
 }
 
+body {
+  background: #00161d;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   text-decoration: none;
   border: none;
+  letter-spacing: 0.07rem;
+  color: #e6e6e6;
+  font-weight: 500;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  letter-spacing: 0.05rem;
-  color: var(--clr);
 }
 
 html {
   font-size: 62.5%;
 }
 
-body {
-  background: var(--body-bg);
-  transition: background 0.2s ease;
+body, html {
+  height: 100%;
+}
+
+main {
+  height: 93%;
+}
+
+header {
+  height: 5%;
+  text-align: center;
+}
+header h2 {
+  font-size: 1.7rem;
 }
 
 a, button {
-  transition: transform 0.3s ease;
+  transition: transform 0.3s;
 }
 
 a:active, button:active {
@@ -77,21 +93,20 @@ button {
 }
 
 #player {
-  height: 85vh;
+  height: 100%;
   max-height: 80rem;
   max-width: 50rem;
-  margin: 1rem auto 3rem auto;
+  margin: auto;
   position: relative;
   overflow-y: scroll;
   overflow: hidden;
-  background: var(--prm_990);
-  border-top: 1px solid var(--border);
-  transition: background 0.2s ease 0.1s;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.5);
+  background: linear-gradient(140deg, rgba(10, 36, 14, 0.5), #01282c);
 }
 
 div#song_list_displayer {
   overflow-y: scroll;
-  height: 85vh;
+  height: 100%;
   animation: animate_player 1s ease;
 }
 @keyframes animate_player {
@@ -107,30 +122,31 @@ div#song_list_displayer div.each_list {
   display: flex;
   align-items: center;
   padding: 1rem;
-  border-bottom: 0.1rem solid var(--border);
-  transition: background 100ms ease;
+  border-bottom: 0.1rem solid #090c09;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+  transition: background 0.25s;
 }
 div#song_list_displayer div.each_list:hover {
-  cursor: pointer;
-  background: var(--list_hover_clr);
+  background: linear-gradient(140deg, rgba(29, 80, 38, 0.5), #09545e);
 }
 div#song_list_displayer div.each_list div.img_container {
   margin: 0 2rem 0 0;
   display: flex;
   border-radius: 50%;
   overflow: hidden;
+  width: 5rem;
+  height: 5rem;
 }
 div#song_list_displayer div.each_list div.details h3 {
   font-size: clamp(1.5rem,1.6rem,1.6vw);
   font-weight: 600;
-  color: var(--song_title_clr);
+  color: #e6e6e6;
 }
 div#song_list_displayer div.each_list div.details p {
-  font-weight: 600;
-  font-size: clamp(1.2rem,1.3rem,1.3vw);
-  color: var(--clr_second);
+  font-size: clamp(1.3rem,1.3rem,1.3vw);
+  color: #969696;
 }
 
 span.span_ripple {
@@ -138,9 +154,9 @@ span.span_ripple {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  background: var(--span_ripple_bg);
+  background: linear-gradient(140deg, rgba(28, 41, 46, 0.5), #0c1a1b);
   transform: translate(-50%, -50%);
-  animation: animate_ripple 0.5s linear infinite;
+  animation: animate_ripple 0.3s linear infinite;
   pointer-events: none;
 }
 @keyframes animate_ripple {
@@ -155,13 +171,12 @@ span.span_ripple {
 }
 
 div#mini_player {
-  height: 0;
   overflow: hidden;
   position: absolute;
   transition: all 0.5s ease-in-out;
   bottom: 0;
   height: 0;
-  background: var(--mini_bg);
+  background: linear-gradient(#0a240e, #01282c);
 }
 
 div.btns span {
@@ -176,6 +191,7 @@ div.btns span svg {
 
 .active_mini_player {
   height: 10vh !important;
+  max-height: 7rem !important;
   position: absolute;
   width: 100%;
   display: flex;
@@ -195,7 +211,7 @@ div.btns span svg {
   height: 5rem;
 }
 .active_mini_player div#part_1 {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem 0.5rem 0;
   display: flex;
   flex-direction: row;
 }
@@ -203,7 +219,9 @@ div.btns span svg {
 .active_mini_player div#part_1 p#current_time,
 .active_mini_player div#part_1 p#total_time {
   font-weight: 600;
-  color: var(--clr);
+}
+.active_mini_player div#part_1 div.img_container {
+  margin-left: 1rem;
 }
 .active_mini_player div#part_1 div.mini_details {
   width: 100%;
@@ -214,10 +232,8 @@ div.btns span svg {
 }
 .active_mini_player div#part_1 div.mini_details h3#mini_song_title {
   font-size: clamp(1.6rem,1.8rem,1.8vw);
-  font-weight: 600;
 }
 .active_mini_player div#part_1 div.mini_details p#mini_song_artist {
-  font-weight: 600;
   display: none;
 }
 .active_mini_player div.timers p#current_time,
@@ -229,10 +245,9 @@ div.btns span svg {
   bottom: 0;
   display: flex;
   align-items: center;
-  height: 0.1rem;
+  height: 0.2rem;
   width: 100%;
-  background: #8416eb;
-  background: green;
+  background: #016b01;
 }
 .active_mini_player div#progress_bar_container div#progressive_bar {
   background: red;
@@ -285,25 +300,25 @@ div.btns span svg {
 }
 .expand_mini_player {
   height: 100% !important;
+  max-height: 100% !important;
   width: 100%;
   bottom: 0;
   cursor: default;
   padding: 0 2rem;
   flex-direction: column;
-  background: var(--active_mini_player_bg) !important;
 }
 .expand_mini_player a#back_btn {
   width: 8rem;
   height: 3rem;
   position: relative;
-  margin: 1rem 0 0 2rem;
+  margin: 1rem 0 0 1rem;
   cursor: pointer;
   display: block;
 }
 .expand_mini_player a#back_btn div.line {
   width: 3rem;
   height: 0.25rem;
-  background: var(--clr);
+  background: #f0f0f0;
   top: 50%;
   position: absolute;
   transform: translateY(-50%);
@@ -313,7 +328,7 @@ div.btns span svg {
   content: "";
   width: 1.2rem;
   height: 0.25rem;
-  background: var(--clr);
+  background: #f0f0f0;
   left: -8%;
   top: 50%;
   transform: rotate(-45deg) translate(50%, -50%);
@@ -350,20 +365,20 @@ div.btns span svg {
 }
 .expand_mini_player div#part_1 div.mini_details p {
   display: block !important;
-  font-weight: 600 !important;
-  font-size: clamp(1.6rem,1.8rem,1.8vw);
-  color: var(--clr_second);
+  font-size: clamp(1.4rem,1.5rem,1.5vw);
+  color: #c8c8c8;
 }
 .expand_mini_player div#part_1 div.timers {
   display: flex;
   justify-content: space-between;
 }
 .expand_mini_player div#part_1 div.timers p {
-  font-size: clamp(1.5rem,1.5rem,1.5vw);
+  font-size: clamp(1.3rem,1.3rem,1.3vw);
+  letter-spacing: 0;
 }
 .expand_mini_player div#part_1 div#progress_bar_container {
   position: unset;
-  height: 0.3rem;
+  height: 0.4rem;
 }
 .expand_mini_player a#back_btn {
   display: block;

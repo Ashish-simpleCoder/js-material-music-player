@@ -71,7 +71,6 @@ next_btn.addEventListener('click',async(e)=>{
     mini_song_img.style.animation = 'animate_img 0.3s ease forwards'
     setTimeout(()=> mini_song_img.style.animation = '',350)
 })
-
 prev_btn.addEventListener('click',async(e)=>{
     e.stopPropagation()
     audio_element.currentTime = 0;
@@ -91,14 +90,14 @@ progress_bar_container.addEventListener('click',(e)=>{
     audio_element.currentTime = percent
 })
 
-
-// addEventListener('load',async()=>{
-//     let index = JSON.parse(localStorage.getItem('index'))
-//     if(index == 0 || index){
-//         const handleMiniPlayerAndSongPlay = await import('./modules/handleMiniPlayerAndSongPlay.js')
-//         handleMiniPlayerAndSongPlay.default(music_arr[index],index,'','from_local')
-//     }
-// })
+//function for fetching last song from local storage
+addEventListener('load',async()=>{
+    let index = JSON.parse(localStorage.getItem('index'))
+    if(index == 0 || index){
+        const handleMiniPlayerAndSongPlay = await import('./modules/handleMiniPlayerAndSongPlay.js')
+        handleMiniPlayerAndSongPlay.default(music_arr[index],index,'','from_local')
+    }
+})
 
 audio_element.addEventListener('loadstart',()=>{
     mini_song_img.classList.add('hide_song_img')
@@ -111,12 +110,12 @@ audio_element.addEventListener('canplay',()=>{
 
 
 
-dark_mode_btn.addEventListener('click',()=>{
-    document.body.classList.toggle('dark_mode')
-    if(dark_mode_btn.innerHTML == '🌚'){
-        dark_mode_btn.innerHTML = '🌞';
-    }else{
-        dark_mode_btn.innerHTML = '🌚';
+// dark_mode_btn.addEventListener('click',()=>{
+//     document.body.classList.toggle('dark_mode')
+//     if(dark_mode_btn.innerHTML == '🌚'){
+//         dark_mode_btn.innerHTML = '🌞';
+//     }else{
+//         dark_mode_btn.innerHTML = '🌚';
 
-    }
-})
+//     }
+// })
