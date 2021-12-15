@@ -59,8 +59,20 @@ html {
   font-size: 62.5%;
 }
 
-body {
-  background: var(--body-bg);
+body, html {
+  height: 100%;
+}
+
+main {
+  height: 93%;
+}
+
+header {
+  height: 5%;
+  text-align: center;
+}
+header h2 {
+  font-size: 1.7rem;
 }
 
 a, button {
@@ -81,11 +93,10 @@ button {
 }
 
 #player {
-  height: 85vh;
+  height: 100%;
   max-height: 80rem;
   max-width: 50rem;
-  width: 90%;
-  margin: 1rem auto 3rem auto;
+  margin: auto;
   position: relative;
   overflow-y: scroll;
   overflow: hidden;
@@ -95,7 +106,7 @@ button {
 
 div#song_list_displayer {
   overflow-y: scroll;
-  height: 85vh;
+  height: 100%;
   animation: animate_player 1s ease;
 }
 @keyframes animate_player {
@@ -112,12 +123,13 @@ div#song_list_displayer div.each_list {
   align-items: center;
   padding: 1rem;
   border-bottom: 0.1rem solid #090c09;
-  transition: background 100ms ease;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+  transition: background 0.25s;
 }
 div#song_list_displayer div.each_list:hover {
-  cursor: pointer;
+  background: linear-gradient(140deg, rgba(29, 80, 38, 0.5), #09545e);
 }
 div#song_list_displayer div.each_list div.img_container {
   margin: 0 2rem 0 0;
@@ -134,7 +146,7 @@ div#song_list_displayer div.each_list div.details h3 {
 }
 div#song_list_displayer div.each_list div.details p {
   font-size: clamp(1.3rem,1.3rem,1.3vw);
-  color: #c8c8c8;
+  color: #969696;
 }
 
 span.span_ripple {
@@ -142,9 +154,9 @@ span.span_ripple {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  background: var(--span_ripple_bg);
+  background: linear-gradient(140deg, rgba(28, 41, 46, 0.5), #0c1a1b);
   transform: translate(-50%, -50%);
-  animation: animate_ripple 0.5s linear infinite;
+  animation: animate_ripple 0.3s linear infinite;
   pointer-events: none;
 }
 @keyframes animate_ripple {
@@ -179,6 +191,7 @@ div.btns span svg {
 
 .active_mini_player {
   height: 10vh !important;
+  max-height: 7rem !important;
   position: absolute;
   width: 100%;
   display: flex;
@@ -198,7 +211,7 @@ div.btns span svg {
   height: 5rem;
 }
 .active_mini_player div#part_1 {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem 0.5rem 0;
   display: flex;
   flex-direction: row;
 }
@@ -206,6 +219,9 @@ div.btns span svg {
 .active_mini_player div#part_1 p#current_time,
 .active_mini_player div#part_1 p#total_time {
   font-weight: 600;
+}
+.active_mini_player div#part_1 div.img_container {
+  margin-left: 1rem;
 }
 .active_mini_player div#part_1 div.mini_details {
   width: 100%;
@@ -229,7 +245,7 @@ div.btns span svg {
   bottom: 0;
   display: flex;
   align-items: center;
-  height: 0.1rem;
+  height: 0.2rem;
   width: 100%;
   background: #016b01;
 }
@@ -284,6 +300,7 @@ div.btns span svg {
 }
 .expand_mini_player {
   height: 100% !important;
+  max-height: 100% !important;
   width: 100%;
   bottom: 0;
   cursor: default;

@@ -25,7 +25,7 @@ function template(song){
         span.style.left = x+'px'
         span.style.top = y+'px'
         div.appendChild(span)
-        setTimeout(()=>span.remove(),500)
+        setTimeout(()=>span.remove(),300)
 
         const setSongDetailsLocalStorage = await import('./setSongDetailsLocalStorage.js')
         setSongDetailsLocalStorage.default()
