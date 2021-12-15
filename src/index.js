@@ -119,3 +119,8 @@ audio_element.addEventListener('canplay',()=>{
 
 //     }
 // })
+
+const mini_player = document.querySelector('#mini_player')
+mini_player.addEventListener('dragover',e=>{
+    mini_player.classList.add('expand_mini_player')
+})
