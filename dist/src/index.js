@@ -119,3 +119,14 @@ audio_element.addEventListener('canplay',()=>{
 
 //     }
 // })
+
+const mini_player = document.querySelector('#mini_player')
+// mini_player.addEventListener('dragover',e=>{
+    // })
+// mini_player.addEventListener('touchend',e=>{
+//     mini_player.classList.add('expand_mini_player')
+//     console.log(e)
+// })
+mini_player.addEventListener('pointerup',()=>{
+    mini_player.classList.add('expand_mini_player')
+})
